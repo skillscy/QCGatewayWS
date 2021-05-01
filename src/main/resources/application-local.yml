@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+company:
+  product:
+    id: ${PRODUCT_ID}
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: main-ws
+          uri: lb://MAIN-WS
+          predicates:
+            - Path=/add-on/api/**
+          filters:
+            - StripPrefix=2

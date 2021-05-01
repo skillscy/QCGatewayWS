@@ -1,0 +1,17 @@
+server:
+  port: ${PORT}
+
+company:
+  product:
+    id: ${PRODUCT_ID}
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: main-ws
+          uri: ${APP_URL}
+          predicates:
+            - Path=/add-on/api/**
+          filters:
+            - StripPrefix=2

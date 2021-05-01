@@ -1,0 +1,19 @@
+company:
+  name: Quart Ciphers
+
+spring:
+  application:
+    name: GATEWAY-WS
+  profiles:
+    active: ${PROFILE}
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          enabled: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
