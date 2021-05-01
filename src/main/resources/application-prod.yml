@@ -10,7 +10,7 @@ spring:
     gateway:
       routes:
         - id: main-ws
-          uri: ${APP_URL}
+          uri: ${MAINWS_APP_URL}
           predicates:
             - Path=/add-on/api/**
           filters:
