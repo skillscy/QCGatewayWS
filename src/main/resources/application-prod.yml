@@ -9,9 +9,57 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: main-ws
-          uri: ${MAINWS_APP_URL}
-          predicates:
-            - Path=/add-on/api/**
-          filters:
-            - StripPrefix=2
+      - id: main-ws
+        uri: ${MAINWS_APP_URL}
+        predicates:
+        - Path=/add-on/api/**
+        filters:
+        - StripPrefix=2
+      - id: auth-ws
+        uri: ${AUTHWS_APP_URL}
+        predicates:
+        - Path=/verify/api/**
+        filters:
+        - StripPrefix=2
+      - id: blog-ws
+        uri: ${BLOGWS_APP_URL}
+        predicates:
+        - Path=/blog/api/**
+        filters:
+        - StripPrefix=2
+      - id: candidate-ws
+        uri: ${CANDIDATEWS_APP_URL}
+        predicates:
+        - Path=/candidate/api/**
+        filters:
+        - StripPrefix=2
+      - id: client-ws
+        uri: ${CLIENTWS_APP_URL}
+        predicates:
+        - Path=/client/api/**
+        filters:
+        - StripPrefix=2
+      - id: delivery-ws
+        uri: ${DELIVERYWS_APP_URL}
+        predicates:
+        - Path=/delivery/api/**
+        filters:
+        - StripPrefix=2
+      - id: document-ws
+        uri: ${DOCUMENTWS_APP_URL}
+        predicates:
+        - Path=/document/api/**
+        filters:
+        - StripPrefix=2
+      - id: feedback-ws
+        uri: ${FEEDBACKWS_APP_URL}
+        predicates:
+        - Path=/feedback/api/**
+        filters:
+        - StripPrefix=2
+      - id: workwise-ws
+        uri: ${WORKWISEWS_APP_URL}
+        predicates:
+        - Path=/workwise/api/**
+        filters:
+        - StripPrefix=2
