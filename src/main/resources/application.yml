@@ -5,7 +5,7 @@ spring:
   application:
     name: GATEWAY-WS
   profiles:
-    active: ${PROFILE}
+    active: ${PROFILE:local}
   cloud:
     gateway:
       enabled: true
